@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import CoursesPreviewSection from "@/components/CoursesPreviewSection";
+import PortalLinks from "@/components/PortalLinks";
 import CTASection from "@/components/CTASection";
 
 const Index = () => {
@@ -11,6 +12,7 @@ const Index = () => {
       <Header />
       <main className="flex-1">
         <HeroSection />
+        <PortalLinks />
         <AboutSection />
         <CoursesPreviewSection />
         <CTASection />
