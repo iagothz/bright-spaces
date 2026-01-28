@@ -18,10 +18,10 @@ const App = () => (
         <Toaster />
         <Sonner />
         <Routes>
-          <Route path="/bright-spaces" element={<Index />} />
-          <Route path="/bright-spaces/cursos" element={<Cursos />} />
-          <Route path="/bright-spaces/contato" element={<Contato />} />
-          <Route path="/bright-spaces/trabalhe-conosco" element={<TrabalheConosco />} />
+          <Route path="/" element={<Index />} />
+          <Route path="/cursos" element={<Cursos />} />
+          <Route path="/contato" element={<Contato />} />
+          <Route path="/trabalhe-conosco" element={<TrabalheConosco />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
