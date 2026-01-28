@@ -52,11 +52,22 @@ const allCourses = [
 const Cursos = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredCourses = allCourses.filter(
-    (course) =>
-      course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      course.type.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Define status priority: open first, then waiting, then closed
+  const statusPriority = { open: 0, waiting: 1, closed: 2 };
+
+  const filteredCourses = allCourses
+    .filter(
+      (course) =>
+        course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        course.type.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .sort((a, b) => {
+      // First sort by status priority
+      const statusDiff = statusPriority[a.status] - statusPriority[b.status];
+      if (statusDiff !== 0) return statusDiff;
+      // Then sort alphabetically by title
+      return a.title.localeCompare(b.title, "pt-BR");
+    });
 
   return (
     <div className="min-h-screen flex flex-col">
