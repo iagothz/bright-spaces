@@ -1,4 +1,4 @@
-import { NavLink } from "@/components/NavLink";
+import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Heart } from "lucide-react";
 
 const Footer = () => {
@@ -26,18 +26,18 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Links Rápidos</h4>
             <nav className="flex flex-col gap-2">
-              <NavLink to="/" className="text-sm opacity-70 hover:opacity-100 transition-opacity">
+              <Link to="/" className="text-sm opacity-70 hover:opacity-100 transition-opacity">
                 Início
-              </NavLink>
-              <NavLink to="/cursos" className="text-sm opacity-70 hover:opacity-100 transition-opacity">
+              </Link>
+              <Link to="/cursos" className="text-sm opacity-70 hover:opacity-100 transition-opacity">
                 Nossos Cursos
-              </NavLink>
-              <NavLink to="/trabalhe-conosco" className="text-sm opacity-70 hover:opacity-100 transition-opacity">
+              </Link>
+              <Link to="/trabalhe-conosco" className="text-sm opacity-70 hover:opacity-100 transition-opacity">
                 Trabalhe Conosco
-              </NavLink>
-              <NavLink to="/contato" className="text-sm opacity-70 hover:opacity-100 transition-opacity">
+              </Link>
+              <Link to="/contato" className="text-sm opacity-70 hover:opacity-100 transition-opacity">
                 Contato
-              </NavLink>
+              </Link>
             </nav>
           </div>
 

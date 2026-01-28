@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { NavLink } from "@/components/NavLink";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
     { href: "/", label: "Início" },
@@ -13,12 +15,17 @@ const Header = () => {
     { href: "/contato", label: "Contato" },
   ];
 
+  const isActive = (path: string) => {
+    if (path === "/") return location.pathname === "/";
+    return location.pathname.startsWith(path);
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-md shadow-card border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center shadow-soft">
               <span className="text-primary-foreground font-bold text-lg">IS</span>
             </div>
@@ -28,20 +35,23 @@ const Header = () => {
               </h1>
               <p className="text-xs text-muted-foreground">Unidade Registro</p>
             </div>
-          </NavLink>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-2">
             {navItems.map((item) => (
-              <NavLink
+              <Link
                 key={item.href}
                 to={item.href}
-                end={item.href === "/"}
-                className="px-4 py-2 rounded-pill text-foreground/80 hover:text-primary hover:bg-secondary transition-all duration-300 font-medium"
-                activeClassName="bg-primary text-primary-foreground hover:text-primary-foreground hover:bg-primary"
+                className={cn(
+                  "px-4 py-2 rounded-pill font-medium transition-all duration-300",
+                  isActive(item.href)
+                    ? "bg-primary text-primary-foreground"
+                    : "text-foreground/80 hover:text-primary hover:bg-secondary"
+                )}
               >
                 {item.label}
-              </NavLink>
+              </Link>
             ))}
           </nav>
 
@@ -61,16 +71,19 @@ const Header = () => {
           <nav className="md:hidden mt-4 pb-2 animate-fade-in">
             <div className="flex flex-col gap-2">
               {navItems.map((item) => (
-                <NavLink
+                <Link
                   key={item.href}
                   to={item.href}
-                  end={item.href === "/"}
-                  className="px-4 py-3 rounded-2xl text-foreground/80 hover:text-primary hover:bg-secondary transition-all duration-300 font-medium"
-                  activeClassName="bg-primary text-primary-foreground hover:text-primary-foreground hover:bg-primary"
+                  className={cn(
+                    "px-4 py-3 rounded-2xl font-medium transition-all duration-300",
+                    isActive(item.href)
+                      ? "bg-primary text-primary-foreground"
+                      : "text-foreground/80 hover:text-primary hover:bg-secondary"
+                  )}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
-                </NavLink>
+                </Link>
               ))}
             </div>
           </nav>

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { NavLink } from "@/components/NavLink";
+import { Link } from "react-router-dom";
 import { ArrowRight, GraduationCap, Users, Award } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 
@@ -29,10 +29,10 @@ const HeroSection = () => {
 
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="rounded-pill shadow-soft-lg gap-2 text-base px-8">
-                <NavLink to="/cursos">
+                <Link to="/cursos">
                   Ver Cursos
                   <ArrowRight className="w-4 h-4" />
-                </NavLink>
+                </Link>
               </Button>
               <Button
                 asChild
@@ -40,7 +40,7 @@ const HeroSection = () => {
                 size="lg"
                 className="rounded-pill gap-2 text-base px-8"
               >
-                <NavLink to="/contato">Fale Conosco</NavLink>
+                <Link to="/contato">Fale Conosco</Link>
               </Button>
             </div>
 
