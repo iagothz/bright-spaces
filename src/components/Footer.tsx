@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Heart } from "lucide-react";
+import { Phone, Mail, MapPin, Heart, GraduationCap, User, ExternalLink } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="bg-foreground text-background">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo e descrição */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -41,27 +41,63 @@ const Footer = () => {
             </nav>
           </div>
 
+          {/* Portal Galileu */}
+          <div>
+            <h4 className="font-bold text-lg mb-4">Portal Galileu</h4>
+            <nav className="flex flex-col gap-3">
+              <a
+                href="https://portalaluno.app/auth/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm opacity-70 hover:opacity-100 transition-opacity group"
+              >
+                <GraduationCap className="w-4 h-4" />
+                Portal do Aluno
+                <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </a>
+              <a
+                href="https://www.appgalileu.com.br/professor"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm opacity-70 hover:opacity-100 transition-opacity group"
+              >
+                <User className="w-4 h-4" />
+                Portal do Professor
+                <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </a>
+            </nav>
+          </div>
+
           {/* Contato */}
           <div>
             <h4 className="font-bold text-lg mb-4">Contato</h4>
             <div className="space-y-3">
               <a
-                href="tel:+5515997513449"
+                href="tel:+551338217476"
                 className="flex items-center gap-3 text-sm opacity-70 hover:opacity-100 transition-opacity"
               >
                 <Phone className="w-4 h-4" />
-                (15) 99751-3449
+                (13) 3821-7476
               </a>
               <a
-                href="mailto:contato@institutosorocabano.com.br"
+                href="https://wa.me/5515997513449"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-sm opacity-70 hover:opacity-100 transition-opacity"
+              >
+                <Phone className="w-4 h-4" />
+                (15) 99751-3449 (WhatsApp)
+              </a>
+              <a
+                href="mailto:inst.sorocabano@terra.com.br"
                 className="flex items-center gap-3 text-sm opacity-70 hover:opacity-100 transition-opacity"
               >
                 <Mail className="w-4 h-4" />
-                contato@institutosorocabano.com.br
+                inst.sorocabano@terra.com.br
               </a>
               <div className="flex items-start gap-3 text-sm opacity-70">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>Centro, Registro - SP</span>
+                <span>R. Gersoni Nápoli, 96 - Centro, Registro - SP</span>
               </div>
             </div>
           </div>
