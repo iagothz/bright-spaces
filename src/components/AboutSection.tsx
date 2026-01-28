@@ -32,7 +32,7 @@ const AboutSection = () => {
 
           <BentoCard
             title="Cursos Técnicos"
-            description="Oferecemos cursos técnicos em Enfermagem e Radiologia com certificação reconhecida pelo MEC."
+            description="Nossos Cursos Técnicos são certificados pelo MEC, conforme a Lei nº 11.741, de 16 de julho de 2008."
             icon={BookOpen}
             className="animate-fade-in"
           />
