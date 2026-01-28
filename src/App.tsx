@@ -13,7 +13,7 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
+    <BrowserRouter basename="/bright-spaces">
       <TooltipProvider>
         <Toaster />
         <Sonner />
