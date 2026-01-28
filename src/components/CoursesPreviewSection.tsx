@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { NavLink } from "@/components/NavLink";
+import { Link } from "react-router-dom";
 import CourseCard from "@/components/CourseCard";
 import { ArrowRight } from "lucide-react";
 
@@ -46,10 +46,10 @@ const CoursesPreviewSection = () => {
             variant="outline"
             className="rounded-pill gap-2 self-start md:self-auto"
           >
-            <NavLink to="/cursos">
+            <Link to="/cursos">
               Ver todos os cursos
               <ArrowRight className="w-4 h-4" />
-            </NavLink>
+            </Link>
           </Button>
         </div>
 

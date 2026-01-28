@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { NavLink } from "@/components/NavLink";
+import { Link } from "react-router-dom";
 import { Phone, Mail, ArrowRight } from "lucide-react";
 
 const CTASection = () => {
@@ -26,10 +26,10 @@ const CTASection = () => {
                 variant="secondary"
                 className="rounded-pill gap-2 text-base px-8 shadow-soft"
               >
-                <NavLink to="/contato">
+                <Link to="/contato">
                   Fale Conosco
                   <ArrowRight className="w-4 h-4" />
-                </NavLink>
+                </Link>
               </Button>
 
               <Button
