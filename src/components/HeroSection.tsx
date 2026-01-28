@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, GraduationCap, Users, Award } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+import HeroCarousel from "@/components/HeroCarousel";
 
 const HeroSection = () => {
   return (
@@ -67,21 +67,9 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Image */}
+          {/* Carousel */}
           <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <div className="relative z-10">
-              <img
-                src={heroImage}
-                alt="Instituto Sorocabano - Fachada"
-                className="rounded-3xl shadow-soft-lg w-full object-cover aspect-[4/3]"
-              />
-            </div>
-            {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-3xl -z-0 animate-float" />
-            <div
-              className="absolute -bottom-4 -left-4 w-32 h-32 bg-salmon/50 rounded-3xl -z-0 animate-float"
-              style={{ animationDelay: "1s" }}
-            />
+            <HeroCarousel />
           </div>
         </div>
       </div>
