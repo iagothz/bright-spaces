@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Heart, GraduationCap, User, ExternalLink } from "lucide-react";
+import { Phone, Mail, MapPin, Heart, GraduationCap, User, ExternalLink, Instagram, Clock } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -20,6 +20,18 @@ const Footer = () => {
             <p className="text-sm opacity-70 leading-relaxed">
               Há mais de 20 anos formando profissionais de excelência na área da saúde.
             </p>
+            
+            {/* Horário de atendimento */}
+            <div className="pt-2">
+              <div className="flex items-start gap-2 text-sm">
+                <Clock className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
+                <div className="opacity-70">
+                  <p className="font-medium opacity-100">Horário de Atendimento</p>
+                  <p>Seg a Sex: 09h às 22h</p>
+                  <p>Sábados: 08h às 12h</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Links rápidos */}
@@ -94,6 +106,15 @@ const Footer = () => {
               >
                 <Mail className="w-4 h-4" />
                 inst.sorocabano@terra.com.br
+              </a>
+              <a
+                href="https://www.instagram.com/instsorocabano.rgt/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-sm opacity-70 hover:opacity-100 transition-opacity"
+              >
+                <Instagram className="w-4 h-4" />
+                @instsorocabano.rgt
               </a>
               <div className="flex items-start gap-3 text-sm opacity-70">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
